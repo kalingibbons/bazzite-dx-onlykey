@@ -10,8 +10,11 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux 
-
+dnf5 install -y tmux snapd
+ln -s /var/lib/snapd/snap /snap
+wget "https://repo.protonvpn.com/fedora-$(cat /etc/fedora-release | cut -d' ' -f 3)-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.3-1.noarch.rpm"
+dnf5 install ./protonvpn-stable-release-1.0.3-1.noarch.rpm && dnf5 check-update --refresh 
+dnf5 install -y proton-vpn-gnome-desktop 
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
