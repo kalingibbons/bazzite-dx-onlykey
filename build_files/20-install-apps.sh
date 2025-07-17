@@ -11,7 +11,7 @@ set -xeuo pipefail
 # this installs a package from fedora repos
 # dnf5 install -y \
 #     GlobalProtect_UI_focal_rpm.x86_64
-files/gp_install.sh
+files/PanGPLinux-6.2.1-c31/gp_install.sh
 
 
 # Use a COPR Example:
