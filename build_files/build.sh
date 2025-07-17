@@ -10,8 +10,9 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux snapd
-ln -s /var/lib/snapd/snap /snap
+dnf5 install -y \
+    GlobalProtect_UI_focal_rpm.x86_64
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
